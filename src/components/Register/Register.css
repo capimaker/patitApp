@@ -1,0 +1,96 @@
+/* Contenedor externo si decides usar uno */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15rem 1rem 2rem; /* ⬅️ aquí reservas espacio arriba */
+  background-color: var(--fondo);
+  box-sizing: border-box;
+
+/* Formulario */
+form {
+  width: 95%; /* antes: 90% */
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+/* Inputs de AntD */
+.name_css .ant-input,
+.email_css .ant-input,
+.pass_css .ant-input,
+.pass2_css .ant-input,
+.pass_css .ant-input-password,
+.pass2_css .ant-input-password {
+  border-radius: 10px !important;
+  font-family: var(--texto);
+  font-size: 1rem;
+  padding: 12px 16px !important;
+}
+
+/* Placeholder más suave */
+.name_css .ant-input::placeholder,
+.email_css .ant-input::placeholder,
+.pass_css input::placeholder,
+.pass2_css input::placeholder {
+  color: #aaa !important;
+}
+
+/* Botón nativo HTML */
+form button[type="submit"] {
+  background-color: var(--acentos);
+  color: white;
+  font-family: var(--titulos);
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  padding: 14px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover en el botón */
+form button[type="submit"]:hover {
+  background-color: #b04d00;
+}
+
+/* Responsive en móvil */
+@media (max-width: 480px) {
+  form {
+    gap: 1rem;
+  }
+
+  .name_css .ant-input,
+  .email_css .ant-input,
+  .pass_css .ant-input,
+  .pass2_css .ant-input,
+  .pass_css .ant-input-password,
+  .pass2_css .ant-input-password {
+    font-size: 0.95rem;
+    padding: 10px 14px !important;
+  }
+
+  form button[type="submit"] {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}
+
+/* Imagen de huella arriba del formulario */
+.logo-huella {
+  width: 300px;
+  height: auto;
+  margin-bottom: 4rem;
+}
+
+/* Estilo del formulario */
+.register-form {
+  width: 95%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}}
