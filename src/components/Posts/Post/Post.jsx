@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getAllPost } from "../../../service/post/postSlice";
 const { Meta } = Card;
 import "./Post.css";
+import Carrusel from "../../Elements/Carrusel/Carrusel";
 
 const Post = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const Post = () => {
         <Card
           className="individual-card"
           key={post._id}
-          cover={<img alt="Post" src={post.image?.[0]} />}
+          cover={<Carrusel images={post.image} />}
           actions={[<HeartOutlined key="like" />, <CommentOutlined key="comment" />]}
         >
           <Meta

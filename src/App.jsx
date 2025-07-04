@@ -1,13 +1,13 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Post from "./components/Posts/Post/Post";
+import Posts from "./components/Posts/Posts";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/posts" element={<Post />} />
+          <Route path="/posts" element={<Posts />} />
         </Routes>
       </BrowserRouter>
     </>

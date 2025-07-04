@@ -6,9 +6,10 @@
 }
 
 .individual-card {
-  border: #d06000 2px solid;
+  border: #d06000 3px solid;
   width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
