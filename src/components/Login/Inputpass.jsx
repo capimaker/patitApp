@@ -2,7 +2,7 @@
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Input } from 'antd';
 
-export const Inputpass = (className, value, name, placeholder, onChange) => {
+export const Inputpass = ({className, value, name, placeholder, onChange}) => {
   
   return (
       <Input.Password

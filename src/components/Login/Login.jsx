@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { useDispatch } from "react-redux";
 import { Inputpass } from "./Inputpass"; 
-import {Inputemail} from "./Inputemail";
-
+import { Inputemail } from './Inputemail';
+import { login } from '../../service/authSlice';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -21,7 +21,6 @@ const Login = () => {
     };
     const onSubmit = (e) => {
     e.preventDefault();
-    
     dispatch(login(formData));
   };
 

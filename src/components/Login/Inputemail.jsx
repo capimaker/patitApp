@@ -1,8 +1,7 @@
 import { UserOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 
-export const Inputemail = (className, value, name, placeholder, onChange) => {
-    
+export const Inputemail = ({ className, value, name, placeholder, onChange }) => {
   
   return (
      
@@ -11,7 +10,7 @@ export const Inputemail = (className, value, name, placeholder, onChange) => {
       value = {value}
       name = {name}
       placeholder = {placeholder}
-      onChange = {onChange}
+      onChange={onChange}
       prefix={<UserOutlined />}
       
     />
