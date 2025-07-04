@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../../service/AuthSlice";
-//import { Form } from "antd";
 import { notification } from "antd";
-import '@ant-design/v5-patch-for-react-19';
+import "@ant-design/v5-patch-for-react-19";
+import { Inputpass } from "./Inputpass";
+import { Inputemail } from "./Inputemail";
+import { Inputname } from "./Inputname";
 
 
 const Register = () => {
@@ -26,41 +28,54 @@ const Register = () => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    if (password !== password2) {
+    if (password !== password) {
       return notification.error({
         message: "Error",
         description: "Passwords do not match",
       });
     } else {
-       dispatch(register(formData));
+      dispatch(register(formData));
     }
     console.log("formData", formData);
-  }
+  };
 
+  return (
+    <form onSubmit={onSubmit}>
+        <Inputname
+        className="name_css"
+        type="name"
+        name="name"
+        value={name}
+        placeholder="Name"
+        onChange={onChange}
+      />
+      <Inputemail
+        className="email_css"
+        type="email"
+        name="email"
+        value={email}
+        placeholder="Email"
+        onChange={onChange}
+      />
+      <Inputpass
+        className="pass_css"
+        type="password"
+        name="password"
+        value={password}
+        placeholder="Password"
+        onChange={onChange}
+      />
+         <Inputpass
+        className="pass2_css"
+        type="password"
+        name="password2"
+        value={password2}
+        placeholder="Repeat Password"
+        onChange={onChange}
+      />
+      <button type="submit">Register</button>
+    </form>
+  );
+};
 
-return (
-    <div>
-  <form onSubmit={onSubmit}>
-    <input type="text" name="name" value={name} placeholder="name" onChange={onChange} />
-    <input type="email" name="email" value={email} placeholder="email" onChange={onChange} />
-    <input
-      type="password"
-      name="password"
-      value={password}
-      placeholder = "password"
-      onChange={onChange}
-    />
-    <input
-      type="password"
-      name="password2"
-      value={password2}
-      placeholder = "password2"
-      onChange={onChange}
-    />
-    <button type="submit">Register</button>
-  </form>
-  </div>
-)
-
-}
 export default Register;
