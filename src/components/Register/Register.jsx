@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { register } from "../../service/AuthSlice";
 import { notification } from "antd";
 import "@ant-design/v5-patch-for-react-19";
-import { Inputpass } from "./Inputpass";
+import { Inputpass as Inputpass1 } from "./Inputpass";
+import { Inputpass as Inputpass2 } from "./Inputpass";
 import { Inputemail } from "./Inputemail";
 import { Inputname } from "./Inputname";
 
@@ -28,7 +29,7 @@ const Register = () => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    if (password !== password) {
+    if (password !== password2) {
       return notification.error({
         message: "Error",
         description: "Passwords do not match",
@@ -57,22 +58,21 @@ const Register = () => {
         placeholder="Email"
         onChange={onChange}
       />
-      <Inputpass
-        className="pass_css"
-        type="password"
-        name="password"
-        value={password}
-        placeholder="Password"
-        onChange={onChange}
-      />
-         <Inputpass
-        className="pass2_css"
-        type="password"
-        name="password2"
-        value={password2}
-        placeholder="Repeat Password"
-        onChange={onChange}
-      />
+      <Inputpass1
+  className="pass_css"
+  name="password"
+  value={password}
+  placeholder="Password"
+  onChange={onChange}
+/>
+
+<Inputpass2
+  className="pass2_css"
+  name="password2"
+  value={password2}
+  placeholder="Repeat Password"
+  onChange={onChange}
+/>
       <button type="submit">Register</button>
     </form>
   );
