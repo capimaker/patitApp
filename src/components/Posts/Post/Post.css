@@ -13,3 +13,12 @@
   justify-content: space-between;
   overflow: hidden;
 }
+
+.meta-title {
+  font-family: var(--titulos);
+  color: var(--acentos);
+}
+
+.meta-description {
+  font-family: var(--texto);
+}

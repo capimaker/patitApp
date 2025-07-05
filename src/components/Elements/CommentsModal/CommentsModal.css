@@ -1,0 +1,8 @@
+.modal-title {
+  font-family: var(--titulos);
+  color: var(--acentos);
+}
+
+.modal-description {
+  font-family: var(--texto);
+}

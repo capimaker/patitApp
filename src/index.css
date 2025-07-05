@@ -4,8 +4,8 @@
   --acentos: #d06000;
 
   /*TIPOGRAFÍA*/
-  --titulos: "Inter";
-  --texto: "Atma";
+  --titulos: "Atma";
+  --texto: "Inter";
 
   background-color: var(--fondo);
 
