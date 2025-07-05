@@ -9,6 +9,17 @@
   box-sizing: border-box;
 }
 
+.register-form,
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+   margin: 0 auto;
+}
+
+
 .logo-huella {
   width: 100px;
   height: 100px;
@@ -53,15 +64,6 @@
 }
 
 
-.register-form,
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 400px;
-   margin: 0 auto;
-}
 
 
 .name_css .ant-input,
@@ -89,7 +91,7 @@ form {
 }
 
 
-.login-button.ant-btn {
+.register-button.ant-btn {
   width: 400px;
   background: var(--acentos);
   border-color: white;
@@ -104,7 +106,7 @@ form {
   margin: 0 auto;
 }
 
-.login-button.ant-btn:hover {
+.register-button.ant-btn:hover {
   opacity: 0.9;
   background-color: white !important;
   color: #D06000 !important;
@@ -124,12 +126,19 @@ form {
 }
 
 @media (max-width: 480px) {
-  .login-button.ant-btn {
+  
+  .register-button.ant-btn {
     width: 320px !important;    /* ocupa todo el ancho del form */
     max-width: none !important; /* quita cualquier tope de 400px */
     /* opcional: ajusta padding/font-size para mejor legibilidad */
     padding: 0.6rem 0 !important;
     font-size: 0.9rem !important;
   }
+  
+  /* .register-form,
+form {
+
+  max-width: 320px;
+} */
 
 }

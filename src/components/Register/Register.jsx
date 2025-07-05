@@ -63,10 +63,6 @@ const Register = () => {
           Registrarse
         </NavLink>
       </div> 
-    
-
-
-
       <form onSubmit={onSubmit}>
         <Inputname
           className="name_css"
@@ -99,7 +95,7 @@ const Register = () => {
           placeholder="Repeat Password"
           onChange={onChange}
         />
-        <Mybutton className="login-button" htmlType="submit">
+        <Mybutton className="register-button" htmlType="submit">
           Registrarse
         </Mybutton>
         </form>
