@@ -47,7 +47,7 @@ const Register = () => {
     <div className="register-container">
       <img src={huellaLogo} alt="Huella" className="logo-huella" />
 
-      <div className="tabs">
+      {/* <div className="tabs">
         
         <NavLink
           to="/login"
@@ -61,7 +61,7 @@ const Register = () => {
         >
           Registrarse
         </NavLink>
-      </div>
+      </div> */}
     
 
 
@@ -99,9 +99,9 @@ const Register = () => {
           onChange={onChange}
         />
         <Mybutton className="login-button" htmlType="submit">
-          Iniciar Sesión
+          Regístrate ahora
         </Mybutton>
-      </form>
+        </form>
     </div>
   );
 };
