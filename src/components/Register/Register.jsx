@@ -11,6 +11,8 @@ import { Inputname } from "./Inputname";
 import "./Register.css";
 import huellaLogo from "../../assets/logo_patitas.png";
 import { Mybutton } from '../Elements/Button/Button';
+import { FaPaw } from "react-icons/fa";
+
 
 
 const Register = () => {
