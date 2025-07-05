@@ -17,7 +17,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 💡 Este es el que faltaba posicionar bien */
+
 .mobile-navbar {
   position: fixed;
   bottom: 0;
@@ -29,14 +29,14 @@
   justify-content: space-around;
   align-items: center;
   padding: 0.5rem 1rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: 0;
+  border-top-right-radius:0;
   background-color: #d06000;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
 
-/* Icon styles */
+
 .nav-icon {
   font-size: 1.8rem;
   color: white;
@@ -48,7 +48,7 @@
   color: #ffd2a6;
 }
 
-/* Responsive behavior */
+
 @media (min-width: 768px) {
   .mobile-navbar {
     display: none;

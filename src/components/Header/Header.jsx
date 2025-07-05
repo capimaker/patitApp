@@ -9,6 +9,8 @@ import "./Header.css";
 const Header = () => {
   const navigate = useNavigate();
 
+  // const token = localStorage.getItem("token");
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -22,7 +24,9 @@ const Header = () => {
         <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
         <span onClick={handleLogout} className="nav-icon"><IoLogOutOutline /></span>
         <Link to="/create" className="nav-icon"><FaPlus /></Link>
-        <Link to="/profile" className="nav-icon"><FaPaw /></Link>
+        {/* {token && ( */} 
+          <Link to="/profile" className="nav-icon"><FaPaw /></Link>
+        {/* )} */}
       </nav>
 
       {/* NAVBAR MOBILE */}
@@ -30,7 +34,9 @@ const Header = () => {
         <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
         <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
         <Link to="/create" className="nav-icon"><FaPlus /></Link>
-        <Link to="/profile" className="nav-icon"><FaPaw /></Link>
+        {/* {token && ( */}
+          <Link to="/profile" className="nav-icon"><FaPaw /></Link>
+        {/* )} */}
         <span onClick={handleLogout} className="nav-icon"><IoLogOutOutline /></span>
       </nav>
     </>

@@ -1,6 +1,6 @@
 .home-container {
   padding: 1.5rem;
-  padding-top: 90px; /* espacio por el header fijo */
+  padding-top: 90px; 
   box-sizing: border-box;
   max-width: 600px;
   margin: 0 auto;
@@ -32,7 +32,7 @@
   border: none;
   resize: none;
   font-family: var(--texto);
-  font-size: 0.95rem; /* un poco más pequeño y refinado */
+  font-size: 1.2rem; 
   background: transparent;
   outline: none;
   color: #333;
@@ -41,13 +41,13 @@
 }
 
 .post-input::placeholder {
-  color: #a57a4c; /* marrón suave como en la imagen */
+  color: #a57a4c; 
   font-size: 0.95rem;
   font-family: var(--texto);
   opacity: 1;
 }
 
-/* HOVER EN ICONOS DEL NAVBAR MOBILE */
+/* HOVER NAVBAR MOBILE */
 @media (max-width: 767px) {
   .mobile-navbar .nav-icon {
     color: white;
@@ -58,20 +58,20 @@
 
   .mobile-navbar .nav-icon:hover {
     transform: scale(1.5);
-    background-color: rgba(255, 255, 255, 0.15); /* fondo circular sutil */
+    background-color: rgba(255, 255, 255, 0.15); 
     color: #ffeac8;
   }
 }
 
 .home-container {
-  padding-top: 90px; /* deja espacio para el navbar superior */
-  padding-bottom: 80px; /* deja espacio para el navbar inferior (mobile) */
+  padding-top: 90px; 
+  padding-bottom: 80px; 
   box-sizing: border-box;
 }
 
 .post-box {
-  background-color: #fdd9a0;            /* color de fondo melocotón */
-  border-radius: 12px;                  /* bordes redondeados */
+  background-color: #fdd9a0;           
+  border-radius: 12px;              
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   margin-bottom: 1rem;
