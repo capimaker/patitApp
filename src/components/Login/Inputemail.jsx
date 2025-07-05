@@ -1,4 +1,5 @@
 import { UserOutlined } from '@ant-design/icons';
+import { FaPaw } from 'react-icons/fa';
 import { Input } from 'antd';
 
 export const Inputemail = ({ className, value, name, placeholder, onChange }) => {
@@ -11,7 +12,7 @@ export const Inputemail = ({ className, value, name, placeholder, onChange }) =>
       name = {name}
       placeholder = {placeholder}
       onChange={onChange}
-      prefix={<UserOutlined />}
+      prefix={<FaPaw />}
       
     />
   );
