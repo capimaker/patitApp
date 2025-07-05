@@ -1,20 +1,23 @@
-import { UserOutlined } from '@ant-design/icons';
-import { Input } from 'antd';
+import { UserOutlined } from "@ant-design/icons";
+import { Input } from "antd";
+import { FaRegEnvelopeOpen } from "react-icons/fa";
 
-export const Inputemail = ({className, value, name,
-   placeholder, onChange}) => {
-    
-  
+export const Inputemail = ({
+  className,
+  value,
+  name,
+  placeholder,
+  onChange,
+}) => {
   return (
-     
-    <Input
-    className = {className}
-      value = {value}
-      name = {name}
-      placeholder = {placeholder}
-      onChange = {onChange}
-      prefix={<UserOutlined />}
-      
-    />
+    <div className={className}>
+      <Input
+        prefix={<FaRegEnvelopeOpen style={{ color: "#d06000" }} />}
+        value={value}
+        name={name}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
+    </div>
   );
 };

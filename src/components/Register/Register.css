@@ -1,5 +1,5 @@
 .register-container {
- display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ form {
   gap: 1.5rem;
   width: 100%;
   max-width: 400px;
-   margin: 0 auto;
+  margin: 0 auto;
 }
 
 
@@ -24,7 +24,7 @@ form {
   width: 100px;
   height: 100px;
   margin-bottom: 2rem;
-   display: block;
+  display: block;
 }
 
 
@@ -64,16 +64,16 @@ form {
 }
 
 
-
-
 .name_css .ant-input,
 .email_css .ant-input,
 .pass_css .ant-input,
 .pass2_css .ant-input,
 .pass_css .ant-input-password,
 .pass2_css .ant-input-password {
-  width: 100%;
-  
+  width: 100% !important;
+  margin: 0 auto !important;
+  /* Centra la caja */
+  display: block;
   background: white !important;
   border: none !important;
   border-radius: 8px !important;
@@ -92,7 +92,7 @@ form {
 
 
 .register-button.ant-btn {
-  width: 400px;
+  width: 100%;
   background: var(--acentos);
   border-color: white;
   border: none;
@@ -118,22 +118,25 @@ form {
   stroke: var(--acentos) !important;
 }
 
-.forgot{
- margin-top: 0.5rem;
- font-family: var(--texto);
- font-size: 0.85rem;
- text-align:right;
+.forgot {
+  margin-top: 0.5rem;
+  font-family: var(--texto);
+  font-size: 0.85rem;
+  text-align: right;
 }
 
 @media (max-width: 480px) {
-  
+
   .register-button.ant-btn {
+   .login-button.ant-btn {
     width: 320px !important;    
     max-width: none !important; 
     padding: 0.6rem 0 !important;
     font-size: 0.9rem !important;
+ 
   }
-  
+}
+
 
 
 }
