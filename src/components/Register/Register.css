@@ -128,17 +128,12 @@ form {
 @media (max-width: 480px) {
   
   .register-button.ant-btn {
-    width: 320px !important;    /* ocupa todo el ancho del form */
-    max-width: none !important; /* quita cualquier tope de 400px */
-    /* opcional: ajusta padding/font-size para mejor legibilidad */
+    width: 320px !important;    
+    max-width: none !important; 
     padding: 0.6rem 0 !important;
     font-size: 0.9rem !important;
   }
   
-  /* .register-form,
-form {
 
-  max-width: 320px;
-} */
 
 }
