@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from 'react-router-dom';
 import { register } from "../../service/AuthSlice";
 import { notification } from "antd";
 import "@ant-design/v5-patch-for-react-19";
@@ -8,7 +9,7 @@ import { Inputpass as Inputpass2 } from "./Inputpass";
 import { Inputemail } from "./Inputemail";
 import { Inputname } from "./Inputname";
 import "./Register.css";
-import huellaLogo from "../../assets/huella imagen.png";
+import huellaLogo from "../../assets/logo_patitas.png";
 import { Mybutton } from '../Elements/Button/Button';
 
 
@@ -47,7 +48,7 @@ const Register = () => {
     <div className="register-container">
       <img src={huellaLogo} alt="Huella" className="logo-huella" />
 
-      {/* <div className="tabs">
+       <div className="tabs">
         
         <NavLink
           to="/login"
@@ -61,7 +62,7 @@ const Register = () => {
         >
           Registrarse
         </NavLink>
-      </div> */}
+      </div> 
     
 
 
@@ -99,7 +100,7 @@ const Register = () => {
           onChange={onChange}
         />
         <Mybutton className="login-button" htmlType="submit">
-          Regístrate ahora
+          Registrarse
         </Mybutton>
         </form>
     </div>
