@@ -1,21 +1,19 @@
-
-
-
 .register-container {
-  display: flex;
+ display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
-  min-height: 100vh;
   background: var(--fondo);
+  padding: 2rem 1rem;
+  height: 100vh;
   box-sizing: border-box;
 }
-
 
 .logo-huella {
   width: 100px;
   height: 100px;
   margin-bottom: 2rem;
+   display: block;
 }
 
 
@@ -62,6 +60,7 @@ form {
   gap: 1.5rem;
   width: 100%;
   max-width: 400px;
+   margin: 0 auto;
 }
 
 
@@ -72,6 +71,7 @@ form {
 .pass_css .ant-input-password,
 .pass2_css .ant-input-password {
   width: 100%;
+  
   background: white !important;
   border: none !important;
   border-radius: 8px !important;
@@ -101,13 +101,13 @@ form {
   padding: 0.75rem 0;
   cursor: pointer;
   transition: opacity 0.2s;
-   margin: 0 auto;
+  margin: 0 auto;
 }
 
 .login-button.ant-btn:hover {
   opacity: 0.9;
   background-color: white !important;
-  color: black !important;
+  color: #D06000 !important;
 }
 
 
@@ -116,13 +116,20 @@ form {
   stroke: var(--acentos) !important;
 }
 
+.forgot{
+ margin-top: 0.5rem;
+ font-family: var(--texto);
+ font-size: 0.85rem;
+ text-align:right;
+}
+
 @media (max-width: 480px) {
-  .register-container {
-    padding: 2rem 1rem;
+  .login-button.ant-btn {
+    width: 320px !important;    /* ocupa todo el ancho del form */
+    max-width: none !important; /* quita cualquier tope de 400px */
+    /* opcional: ajusta padding/font-size para mejor legibilidad */
+    padding: 0.6rem 0 !important;
+    font-size: 0.9rem !important;
   }
 
-  .login-button.ant-btn {
-    width: 100% !important;
-    max-width: none !important;
-  }
 }

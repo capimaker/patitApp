@@ -1,4 +1,4 @@
-:root {
+html, body, :root {
   /* COLORES */
   --fondo: #FFEAC8;
   --acentos: #D06000;
@@ -10,6 +10,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 
