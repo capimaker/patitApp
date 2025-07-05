@@ -4,16 +4,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15rem 1rem 2rem;
+  padding: 20rem 1rem 2rem;
   background-color: var(--fondo);
   box-sizing: border-box;
 }
 
 /* Imagen de huella */
 .logo-huella {
-  width: 250px;
+  width: 300px;
   height: auto;
-  margin-bottom: 8rem;
+  margin-bottom: 9rem;
 }
 
 /* Formulario general */

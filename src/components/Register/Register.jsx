@@ -8,7 +8,7 @@ import { Inputpass as Inputpass2 } from "./Inputpass";
 import { Inputemail } from "./Inputemail";
 import { Inputname } from "./Inputname";
 import "./Register.css";
-import huellaLogo from "../../assets/huella imagen.png";
+import huellaLogo from "../../assets/logo_patitas.png";
 
 const Register = () => {
   const [formData, setFormData] = useState({
