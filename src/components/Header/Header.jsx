@@ -1,64 +1,39 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logoutUser } from "../redux/userSlice";
-import "./Header.css";
 import { AiOutlineHome } from "react-icons/ai";
-import { IoSearchOutline } from "react-icons/io5";
-import { FiLogOut, FiPlus, FiSearch } from "react-icons/fi";
+import { IoSearchOutline, IoLogOutOutline } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa6";
 import { FaPaw } from "react-icons/fa";
+import "./Header.css";
 
 const Header = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const token = useSelector((state) => state.user.token);
 
   const handleLogout = () => {
-    dispatch(logoutUser());
+    localStorage.removeItem("token");
     navigate("/login");
   };
 
   return (
-    <header className="header">
-      <nav className="navbar">
-        <div className="navbar-left">
-          <Link to="/home">
-            <AiOutlineHome className="nav-icon" />
-          </Link>
-
-          <div className="desktop-only">
-            <Link to="/search">
-              <IoSearchOutline className="nav-icon" />
-            </Link>
-          </div>
-
-          <Link to="/logout" onClick={handleLogout}>
-            <FiLogOut className="nav-icon" />
-          </Link>
-
-          <div className="desktop-only">
-            <Link to="/add">
-              <FiPlus className="nav-icon" />
-            </Link>
-          </div>
-
-          <div className="desktop-only">
-            <Link to="/add">
-              <FaPaw className="nav-icon" />
-            </Link>
-          </div>
-        </div>
+    <>
+      {/* NAVBAR DESKTOP */}
+      <nav className="header desktop-navbar">
+        <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
+        <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
+        <span onClick={handleLogout} className="nav-icon"><IoLogOutOutline /></span>
+        <Link to="/create" className="nav-icon"><FaPlus /></Link>
+        <Link to="/profile" className="nav-icon"><FaPaw /></Link>
       </nav>
 
-      <div className="mobile-footer">
-        <Link to="/search">
-          <FiSearch className="nav-icon" />
-        </Link>
-        <Link to="/add">
-          <FiPlus className="nav-icon" />
-        </Link>
-      </div>
-    </header>
+      {/* NAVBAR MOBILE */}
+      <nav className="header mobile-navbar">
+        <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
+        <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
+        <Link to="/create" className="nav-icon"><FaPlus /></Link>
+        <Link to="/profile" className="nav-icon"><FaPaw /></Link>
+        <span onClick={handleLogout} className="nav-icon"><IoLogOutOutline /></span>
+      </nav>
+    </>
   );
 };
 
