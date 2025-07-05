@@ -9,6 +9,8 @@ import { Inputemail } from "./Inputemail";
 import { Inputname } from "./Inputname";
 import "./Register.css";
 import huellaLogo from "../../assets/huella imagen.png";
+import { Mybutton } from '../Elements/Button/Button';
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -44,6 +46,26 @@ const Register = () => {
   return (
     <div className="register-container">
       <img src={huellaLogo} alt="Huella" className="logo-huella" />
+
+      <div className="tabs">
+        
+        <NavLink
+          to="/login"
+          className={({ isActive }) => isActive ? 'tab active' : 'tab'}
+        >
+          Iniciar sesión
+        </NavLink>
+        <NavLink
+          to="/register"
+          className={({ isActive }) => isActive ? 'tab active' : 'tab'}
+        >
+          Registrarse
+        </NavLink>
+      </div>
+    
+
+
+
       <form onSubmit={onSubmit}>
         <Inputname
           className="name_css"
@@ -76,7 +98,9 @@ const Register = () => {
           placeholder="Repeat Password"
           onChange={onChange}
         />
-        <button type="submit">Register</button>
+        <Mybutton className="login-button" htmlType="submit">
+          Iniciar Sesión
+        </Mybutton>
       </form>
     </div>
   );
