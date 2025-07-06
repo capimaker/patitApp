@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -41,6 +42,8 @@
   color: #888;
 } */
 
+=======
+>>>>>>> develop
 h1 {
   font-family: var(--titulos);
   color: var(--acentos);

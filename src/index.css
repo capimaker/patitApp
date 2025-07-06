@@ -1,12 +1,15 @@
 
 :root {
   /* COLORES */
-  --fondo: #FFEAC8;
-  --acentos: #D06000;
+  --fondo: #ffeac8;
+  --acentos: #d06000;
+
   /*TIPOGRAFÍA*/
-  --titulos: "Inter";
-  --texto: "Atma";
+  --titulos: "Atma";
+  --texto: "Inter";
+
   background-color: var(--fondo);
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
