@@ -8,18 +8,18 @@ const Home = () => {
   const navigate = useNavigate();
   const [redirected, setRedirected] = useState(false);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   const timeout = setTimeout(() => {
-  //     if (token) {
-  //       navigate("/post");
-  //     } else {
-  //       navigate("/login");
-  //     }
-  //     setRedirected(true);
-  //   }, 100);
-  //   return () => clearTimeout(timeout);
-  // }, [navigate]);
+  useEffect(() => {  //comentar este useEffect para poder trabajar en Home
+    const token = localStorage.getItem("token");
+    const timeout = setTimeout(() => {
+      if (token) {
+        navigate("/post");
+      } else {
+        navigate("/login");
+      }
+      setRedirected(true);
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, [navigate]);
 
   return (
     <>
