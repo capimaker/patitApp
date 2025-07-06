@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from 'react-router-dom';
-import { register } from "../../service/AuthSlice";
+import { register } from "../../service/authSlice";
 import { notification } from "antd";
 import "@ant-design/v5-patch-for-react-19";
 import { Inputpass as Inputpass1 } from "./Inputpass";
