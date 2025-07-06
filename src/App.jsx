@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Posts from "./components/Posts/Posts";
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
-import Posts from "./components/Posts/Posts";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 
