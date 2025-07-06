@@ -5,6 +5,7 @@ import Profile from "./components/Profile/Profile";
 import Posts from "./components/Posts/Posts";
 import Login from "./components/Login/Login";
 import Search from "./components/Search/Search";
+import Register from "./components/Register/Register";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/search/:postTitle" element={<Search />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>
