@@ -15,19 +15,18 @@ const Login = () => {
     });
     const {email,password} = formData;
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const onChange = (e) =>{
-        setFormData({
-            ...formData,
-            [e.target.name]:e.target.value,
-        });
-    };
-    const onSubmit = (e) => {
+  const onChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const onSubmit = (e) => {
     e.preventDefault();
     dispatch(login(formData));
   };
-
 
   return (
     <div className="login-container">

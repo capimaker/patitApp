@@ -1,17 +1,15 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-import authService from './AuthService';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import authService from "../service/AuthService";
 
-
-
-const user = JSON.parse(localStorage.getItem("user")|| null);
-const token = JSON.parse(localStorage.getItem("token")|| null);
+const user = JSON.parse(localStorage.getItem("user") || null);
+const token = JSON.parse(localStorage.getItem("token") || null);
 
 const initialState = {
-    user: user,
-    token: token,
-    isError: false,
-    isSuccess: false,
-    message: "",
+  user: user,
+  token: token,
+  isError: false,
+  isSuccess: false,
+  message: "",
 };
 
 export const authSlice = createSlice({
@@ -36,11 +34,11 @@ export const authSlice = createSlice({
 });
 
 export const login = createAsyncThunk("auth/login", async (user) => {
-    try{
-        return await authService.login(user);
-    } catch (error){
+  try {
+    return await authService.login(user);
+  } catch (error) {
     console.error(error);
-    }
+  }
 });
 
 export const logout = createAsyncThunk("auth/logout" , async(user) => {

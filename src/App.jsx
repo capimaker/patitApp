@@ -1,9 +1,14 @@
-
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Posts from "./components/Posts/Posts";
 import Header from './components/Header/Header';
 import Login from "./components/Login/Login";
 import Profile from './components/Profile/Profile';
-import './App.css'
+
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Posts from "./components/Posts/Posts";
+import Login from "./components/Login/Login";
 
 
 function App() {
@@ -16,9 +21,15 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/profile" element={<Profile/>} />
       </Routes>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/login" element={<Login/>} />
+        </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
-export default App
+export default App;
