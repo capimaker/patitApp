@@ -1,6 +1,11 @@
-import axios from "axios";
+ import axios from "axios";
 
 const API_URL = "http://localhost:8080/user";
+
+const register = async (userData) => {
+    const res = await axios.post(API_URL, userData);
+      return res.data;
+};
 
 const login = async (userData) => {
   const res = await axios.post(`${API_URL}/login`, userData);
@@ -27,6 +32,7 @@ const logout = async () => {
 const authService = {
     login,
     logout,
+    register,
 };
 
 export default authService;
