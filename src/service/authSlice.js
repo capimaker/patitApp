@@ -21,9 +21,15 @@ export const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(login.fulfilled, (state, action) => {
-      (state.user = action.payload.user), (state.token = action.payload.token);
-    });
+    builder
+      .addCase(login.fulfilled, (state, action) => {
+        
+        (state.user = action.payload.user),
+          (state.token = action.payload.token);
+      })
+      .addCase(logout.fulfilled, (state) => {
+              (state.user = null), (state.token = null);
+            });
   },
 });
 
@@ -35,5 +41,13 @@ export const login = createAsyncThunk("auth/login", async (user) => {
   }
 });
 
-export const { reset } = authSlice.actions;
+export const logout = createAsyncThunk("auth/logout" , async(user) => {
+  try{
+    return await authService.logout(user);
+  } catch(error){
+    console.log(error);
+  }
+});
+
+export const {reset} = authSlice.actions;
 export default authSlice.reducer;

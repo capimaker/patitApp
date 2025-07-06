@@ -12,8 +12,21 @@ const login = async (userData) => {
   return res.data;
 };
 
+const logout = async () => {
+  const token = JSON.parse(localStorage.getItem("token"));
+  const res = await axios.delete(`${API_URL}/logout`,{
+    headers:{
+      authorization: `Bearer ${token}`,
+    },
+  });
+  if (res.data){
+    localStorage.clear();
+  }
+  return res.data;
+}
 const authService = {
-  login,
+    login,
+    logout,
 };
 
 export default authService;
