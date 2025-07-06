@@ -6,11 +6,12 @@ import { getAllPost, likePost } from "../../../service/post/postSlice";
 const { Meta } = Card;
 import "./Post.css";
 import Carrusel from "../../Elements/Carrusel/Carrusel";
-import CommentsModal from "../../Elements/CommentsModal/CommentsModal";
+import CommentsModal from "../../Comments/CommentsModal/CommentsModal";
 
 const Post = () => {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.posts);
+  const currentUser = useSelector((state) => state.auth.user);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
@@ -19,10 +20,10 @@ const Post = () => {
     dispatch(getAllPost());
   }, [dispatch]);
 
-  const handleOpenComments = (post) => {
+  /*   const handleOpenComments = (post) => {
     setSelectedPost(post);
     setIsModalOpen(true);
-  };
+  }; */
 
   return (
     <div className="post-card">
