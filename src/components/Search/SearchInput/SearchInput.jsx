@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { getAllPost, getPostByTitle } from "../../../service/post/postSlice";
+import "./SearchInput.css";
+import { SearchOutlined } from "@ant-design/icons";
 
 const SearchInput = () => {
   const [text, setText] = useState("");
@@ -30,9 +32,14 @@ const SearchInput = () => {
   }, [postTitle, dispatch]);
 
   return (
-    <>
-      <Input onKeyUp={handleSearch} placeholder="escríbe tu búsqueda" name="text"></Input>
-    </>
+    <div className="search-container">
+      <Input
+        prefix={<SearchOutlined />}
+        onKeyUp={handleSearch}
+        placeholder="Escríbe tu búsqueda y presiona 'Enter' "
+        name="text"
+      ></Input>
+    </div>
   );
 };
 
