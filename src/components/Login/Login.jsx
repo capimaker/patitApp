@@ -64,7 +64,7 @@ const Login = () => {
         <Mybutton className="login-button" htmlType="submit">
           Iniciar Sesión
         </Mybutton>
-        <p className="forgot">¿Olvidaste la contraseña?</p>
+        {/* <p className="forgot">¿Olvidaste la contraseña?</p> */}
       </form>
     </div>
   );
