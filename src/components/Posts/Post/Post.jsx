@@ -30,7 +30,7 @@ const Post = () => {
         <Card
           className="individual-card"
           key={post._id}
-          cover={<Carrusel images={post.image} />}
+          cover={<Carrusel images={post.image || []} />}
           actions={[
             <Badge count={post.likes.length} offset={[6, 0]} size="small" color="orange">
               <HeartTwoTone
@@ -52,7 +52,7 @@ const Post = () => {
           ]}
         >
           <Meta
-            avatar={<Avatar src={post.user.image} />}
+            avatar={<Avatar src={post.user?.image || ""} />}
             title={<span className="meta-title">{post.title}</span>}
             description={<span className="meta-description">{post.body}</span>}
           />
