@@ -8,6 +8,7 @@
   --texto: "Inter";
 
   background-color: var(--fondo);
+  background-image: url("./assets/animal_footprints.png");
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

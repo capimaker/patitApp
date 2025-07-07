@@ -21,7 +21,7 @@
   width: 100%;
   max-width: 340px;
   margin-bottom: 2rem;
-  border-bottom: 2px solid rgba(0,0,0,0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 .tab {
   flex: 1;
@@ -48,14 +48,14 @@
   background: var(--acentos);
 }
 
-.login-form {
+.login-form form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
   max-width: 400px;
 }
-
+/* 
 .login-input {
   width: 100%;
   background: white !important;
@@ -65,11 +65,9 @@
   font-family: var(--texto) !important;
   font-size: 1rem !important;
 }
-
-
-
+ */
 .login-button.ant-btn {
- width: 400px;
+  width: 400px;
   background: var(--acentos);
   border-color: white;
   border: none;
@@ -88,26 +86,23 @@
   color: black !important;
 }
 
-
 .login-input .ant-input-suffix .anticon-eye svg path {
   fill: var(--acentos) !important;
   stroke: var(--acentos) !important;
 }
 
-.forgot{
- margin-top: 0.5rem;
- font-family: var(--texto);
- font-size: 0.85rem;
- text-align:right;
+/* .forgot {
+  margin-top: 0.5rem;
+  font-family: var(--texto);
+  font-size: 0.85rem;
+  text-align: right;
 }
-
-
-
-@media (max-width: 480px) {
+ */
+/* @media (max-width: 480px) {
   .login-button.ant-btn {
     width: 380px !important;    
     max-width: none !important; 
     padding: 0.6rem 0 !important;
     font-size: 0.9rem !important;
   }
-}
+} */

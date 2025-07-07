@@ -37,10 +37,10 @@ const Login = () => {
 
       <div className="tabs">
         <NavLink to="/login" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
-          Iniciar sesión
+          <h3>Iniciar sesión</h3>
         </NavLink>
         <NavLink to="/register" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
-          Registrarse
+          <h3>Registrarse</h3>
         </NavLink>
       </div>
 
