@@ -39,8 +39,8 @@ const Header = () => {
       <nav className="header desktop-navbar">
         <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
         <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
-        <span onClick={onLogout} className="nav-icon"><IoLogOutOutline /></span>
         <Link to="/create" className="nav-icon"><FaPlus /></Link>
+        <span onClick={onLogout} className="nav-icon"><IoLogOutOutline /></span>
         {/* {token && (                                               
           <Link to="/profile" className="nav-icon"><FaPaw /></Link>
          )}    */}
