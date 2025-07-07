@@ -6,6 +6,9 @@ import { Inputpass } from "./Inputpass";
 import { Inputemail } from './Inputemail';
 import { login } from '../../service/authSlice';
 import { Mybutton } from '../Elements/Button/Button';
+import { useEffect } from "react";              
+import { useNavigate } from "react-router-dom"; 
+import { useSelector } from "react-redux"; 
 
 const Login = () => {
    const [activeTab, setActiveTab] = useState('login');
@@ -16,6 +19,15 @@ const Login = () => {
     const {email,password} = formData;
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+const {user} = useSelector((state) => state.auth);
+
+useEffect(() => {
+  if (user) {
+    navigate ("/home");
+  }
+}, [user, navigate])
 
   const onChange = (e) => {
     setFormData({
@@ -72,7 +84,7 @@ const Login = () => {
           Iniciar Sesión
         </Mybutton>
          <p className="forgot">
-           ¿Olvidaste la contraseña?
+           {/* ¿Olvidaste la contraseña? */}
         </p>
         </form>
        </div>

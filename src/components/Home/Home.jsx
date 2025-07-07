@@ -6,40 +6,31 @@ import "./Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [redirected, setRedirected] = useState(false);
 
-  useEffect(() => {  // comentar para poder trabajar en Home
+  useEffect(() => {
     const token = localStorage.getItem("token");
-    const timeout = setTimeout(() => {
-      if (token) {
-        navigate("/post");
-      } else {
-        navigate("/login");
-      }
-      setRedirected(true);
-    }, 100);
-    return () => clearTimeout(timeout);
+    if (!token) {
+      navigate("/login");
+    }
   }, [navigate]);
 
   return (
     <>
       <Header />
-      {!redirected && (
-        <div className="home-container">
-          <div className="welcome-header">
-            <FaPaw className="paw-icon" />
-            <h2>Bienvenido/a a Patitas Conectadas</h2>
-          </div>
-
-          <div className="post-box">
-            <textarea
-              placeholder="¿Qué hay en tu mente?"
-              className="post-input"
-              rows={3}
-            />
-          </div>
+      <div className="home-container">
+        <div className="welcome-header">
+          <FaPaw className="paw-icon" />
+          <h2>Bienvenido/a a Patitas Conectadas</h2>
         </div>
-      )}
+
+        <div className="post-box">
+          <textarea
+            placeholder="¿Qué hay en tu mente?"
+            className="post-input"
+            rows={3}
+          />
+        </div>
+      </div>
     </>
   );
 };
