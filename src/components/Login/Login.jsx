@@ -37,10 +37,10 @@ const Login = () => {
 
       <div className="tabs">
         <NavLink to="/login" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
-          Iniciar sesión
+          <h3>Iniciar sesión</h3>
         </NavLink>
         <NavLink to="/register" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
-          Registrarse
+          <h3>Registrarse</h3>
         </NavLink>
       </div>
 
@@ -64,7 +64,7 @@ const Login = () => {
         <Mybutton className="login-button" htmlType="submit">
           Iniciar Sesión
         </Mybutton>
-        <p className="forgot">¿Olvidaste la contraseña?</p>
+        {/* <p className="forgot">¿Olvidaste la contraseña?</p> */}
       </form>
     </div>
   );

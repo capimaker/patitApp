@@ -1,4 +1,10 @@
 h1 {
   font-family: var(--titulos);
   color: var(--acentos);
+  text-align: center;
+}
+h3 {
+  font-family: var(--titulos);
+  color: var(--acentos);
+  text-align: center;
 }
