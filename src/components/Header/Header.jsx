@@ -25,7 +25,7 @@ const Header = () => {
       <div className = "header-top">
          {user ? (
             <>
-                 <Mybutton onClick={onLogout}>Cerrar Sesión</Mybutton>
+                 {/* <Mybutton onClick={onLogout}>Cerrar Sesión</Mybutton> */}
                  <span><Link to="/profile">{user.name}</Link></span>
                  </>
                ):(

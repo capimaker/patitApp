@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { FaPaw } from "react-icons/fa";
 import "./Home.css";
+import Post from "../Posts/Post/Post";
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,12 +25,15 @@ const Home = () => {
           <h2>Bienvenido/a a Patitas Conectadas</h2>
         </div>
 
-        <div className="post-box">
+        {/* <div className="post-box">
           <textarea
             placeholder="¿Qué hay en tu mente?"
             className="post-input"
             rows={3}
           />
+        </div> */}
+        <div>
+        <Post />
         </div>
       </div>
     </>
