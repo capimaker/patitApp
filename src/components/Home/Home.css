@@ -1,6 +1,6 @@
 .home-container {
-  padding: 1.5rem;
-  padding-top: 90px; 
+  padding: 2.4rem;
+  padding-top: 50px; 
   box-sizing: border-box;
   max-width: 600px;
   margin: 0 auto;
@@ -9,43 +9,19 @@
 .welcome-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
   color: #d06000;
   font-family: var(--titulos);
+  font-size: 1.3rem;
+
 }
 
 .paw-icon {
-  font-size: 1.5rem;
+  font-size: 6rem;
   color: #d06000;
 }
 
-.post-box {
-  background-color: #ffeac8;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.post-input {
-  width: 100%;
-  border: none;
-  resize: none;
-  font-family: var(--texto);
-  font-size: 1.2rem; 
-  background: transparent;
-  outline: none;
-  color: #333;
-  line-height: 1.4;
-  padding: 0;
-}
-
-.post-input::placeholder {
-  color: #a57a4c; 
-  font-size: 0.95rem;
-  font-family: var(--texto);
-  opacity: 1;
-}
 
 /* HOVER NAVBAR MOBILE */
 @media (max-width: 767px) {
@@ -63,7 +39,7 @@
   }
 }
 
-.home-container {
+/* .home-container {
   padding-top: 90px; 
   padding-bottom: 80px; 
   box-sizing: border-box;
@@ -75,4 +51,4 @@
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   margin-bottom: 1rem;
-}
+} */
