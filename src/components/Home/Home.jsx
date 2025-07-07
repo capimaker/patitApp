@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import { FaPaw } from "react-icons/fa";
 import "./Home.css";
 import Post from "../Posts/Post/Post";
+import Footer from "../../components/Footer/Footer";
 
 
 const Home = () => {
@@ -36,6 +37,7 @@ const Home = () => {
         <Post />
         </div>
       </div>
+      <Footer />
     </>
   );
 };
