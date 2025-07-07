@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [redirected, setRedirected] = useState(false);
 
-  useEffect(() => {  //comentar este useEffect para poder trabajar en Home
+  useEffect(() => {  // comentar para poder trabajar en Home
     const token = localStorage.getItem("token");
     const timeout = setTimeout(() => {
       if (token) {
