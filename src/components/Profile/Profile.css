@@ -28,6 +28,7 @@
 .profile-info p {
   margin: 0.25rem 0 0;
   color: gray;
+  font-family: var(--texto);
 }
 
 .profile-posts-title {
@@ -40,6 +41,7 @@
 .no-posts {
   text-align: center;
   color: gray;
+  font-family: var(--texto);
 }
 
 

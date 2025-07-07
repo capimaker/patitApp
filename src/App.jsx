@@ -7,6 +7,7 @@ import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import Search from "./components/Search/Search";
 import Register from "./components/Register/Register";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/search/:postTitle" element={<Search />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
