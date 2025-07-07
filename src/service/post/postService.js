@@ -19,9 +19,15 @@ const likePost = async (postId, token) => {
   return res.data.post;
 };
 
+const getPostByTitle = async (postTitle) => {
+  const res = await axios.get(`${API_URL}/title/${postTitle}`);
+  return res.data;
+};
+
 const postService = {
   getAllPost,
   likePost,
+  getPostByTitle,
 };
 
 export default postService;

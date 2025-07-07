@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import { register } from "../../service/authSlice";
 import { notification } from "antd";
 import "@ant-design/v5-patch-for-react-19";
@@ -12,8 +12,6 @@ import "./Register.css";
 import huellaLogo from "../../assets/logo_patitas.png";
 import { Mybutton } from '../Elements/Button/Button';
 import { FaPaw } from "react-icons/fa";
-
-
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -50,21 +48,14 @@ const Register = () => {
     <div className="register-container">
       <img src={huellaLogo} alt="Huella" className="logo-huella" />
 
-       <div className="tabs">
-        
-        <NavLink
-          to="/login"
-          className={({ isActive }) => isActive ? 'tab active' : 'tab'}
-        >
-          Iniciar sesión
+      <div className="tabs">
+        <NavLink to="/login" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
+          <h3>Iniciar sesión</h3>
         </NavLink>
-        <NavLink
-          to="/register"
-          className={({ isActive }) => isActive ? 'tab active' : 'tab'}
-        >
-          Registrarse
+        <NavLink to="/register" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
+          <h3>Registrarse</h3>
         </NavLink>
-      </div> 
+      </div>
       <form onSubmit={onSubmit}>
         <Inputname
           className="name_css"
@@ -100,7 +91,7 @@ const Register = () => {
         <Mybutton className="register-button" htmlType="submit">
           Registrarse
         </Mybutton>
-        </form>
+      </form>
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 :root {
   /* COLORES */
   --fondo: #ffeac8;
@@ -9,12 +8,10 @@
   --texto: "Inter";
 
   background-color: var(--fondo);
+  background-image: url("./assets/animal_footprints.png");
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-
