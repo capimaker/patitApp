@@ -5,6 +5,7 @@ import { IoSearchOutline, IoLogOutOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import { logout } from "../../service/authSlice";
 import { Mybutton } from "../Elements/Button/Button";
+import { FaPaw } from "react-icons/fa";
 import "./Header.css";
 
 const Header = () => {
@@ -40,6 +41,7 @@ const Header = () => {
         <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
         <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
         <Link to="/create" className="nav-icon"><FaPlus /></Link>
+        <Link to="/profile" className="nav-icon"><FaPaw /></Link>
         <span onClick={onLogout} className="nav-icon"><IoLogOutOutline /></span>
         {/* {token && (                                               
           <Link to="/profile" className="nav-icon"><FaPaw /></Link>
@@ -55,6 +57,7 @@ const Header = () => {
          {/* {token && (                                                    
           <Link to="/profile" className="nav-icon"><FaPaw /></Link>
          )}                                                                 */}
+         <Link to="/profile" className="nav-icon"><FaPaw /></Link>
         <span onClick={onLogout}className="nav-icon"><IoLogOutOutline /></span>
       </nav>
     </>
