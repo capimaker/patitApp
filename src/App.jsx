@@ -6,6 +6,7 @@ import Posts from "./components/Posts/Posts";
 import Login from "./components/Login/Login";
 import Search from "./components/Search/Search";
 import Register from "./components/Register/Register";
+import NewPost from "./components/Posts/NewPost/NewPost";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/search/:postTitle" element={<Search />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/posts/newpost" element={<NewPost />} />
         </Routes>
       </BrowserRouter>
     </>

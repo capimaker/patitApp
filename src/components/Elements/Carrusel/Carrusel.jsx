@@ -1,9 +1,7 @@
 import { Carousel } from "antd";
 
 const Carrusel = ({ images = [] }) => {
-  const onChange = () => {
-    /* console.log("slide actual: ", currentSlide); */
-  };
+  const onChange = () => {};
   return (
     <Carousel afterChange={onChange} draggable="true">
       {images.map((img, index) => (
