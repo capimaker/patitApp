@@ -17,6 +17,7 @@ const Header = () => {
         <nav>
             {user ? (
             <>
+                {user.role === 'admin' ? <span><Link to ="/admin">Admin</Link></span>:''}
                  <Mybutton onClick={onLogout}> Cerrar Sesión</Mybutton>
                  <span><Link to="/profile">{user.name}</Link></span>
                  </>
