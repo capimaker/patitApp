@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPost, likePost } from "../../service//post/postSlice";
@@ -9,13 +8,11 @@ import CommentsModal from "../Elements/CommentsModal/CommentsModal";
 import "./Profile.css";
 const { Meta } = Card;
 
-
 const Profile = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const posts = useSelector((state) => state.posts.posts);
 
-  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
 
@@ -23,11 +20,11 @@ const Profile = () => {
     dispatch(getAllPost());
   }, [dispatch]);
 
-  
-  const myPosts = posts.filter((p) => p.user?._id === user?._id);
+  if (!user) return null; // ✅ Protección mínima contra user null
+
+  const myPosts = posts.filter((p) => p.user?._id === user._id); // ✅ user._id solo si user existe
 
   const handleLike = (postId) => {
-    
     dispatch(likePost(postId));
   };
 
@@ -38,7 +35,6 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-     
       <div className="profile-header">
         <img
           src={user.image || ""}
@@ -106,7 +102,6 @@ const Profile = () => {
         />
       )}
     </div>
-    
   );
 };
 

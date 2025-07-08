@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 import logo from "../../assets/logo_patitas.png";
 
 const Login = () => {
-  // const [activeTab, setActiveTab] = useState("login");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -77,7 +76,6 @@ useEffect(() => {
           Iniciar Sesión
         </Mybutton>
          <p className="forgot">
-           {/* ¿Olvidaste la contraseña? */}
         </p>
         </form>
        </div>
