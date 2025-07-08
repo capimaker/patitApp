@@ -64,6 +64,14 @@ const Post = () => {
           open={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           post={selectedPost}
+          onCommentUpdated={(updatedComment) => {
+            setSelectedPost((prevPost) => ({
+              ...prevPost,
+              comments: prevPost.comments.map((comment) =>
+                comment._id === updatedComment._id ? updatedComment : comment
+              ),
+            }));
+          }}
         />
       )}
     </div>

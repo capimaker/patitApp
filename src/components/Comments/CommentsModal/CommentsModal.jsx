@@ -15,8 +15,6 @@ const CommentsModal = ({ open, onClose, post, onCommentUpdated }) => {
     if (!token) return;
 
     try {
-      console.log("Token desde redux:", token);
-
       const resultAction = await dispatch(
         updateComment({ commentId: editingCommentId, updatedComment: { text: editedText }, token })
       );
