@@ -17,17 +17,25 @@ export const updateComment = createAsyncThunk(
   }
 );
 
+export const createComment = createAsyncThunk("comment/create", async ({ postId, text, token }) => {
+  return await commentService.createComment(postId, { text }, token);
+});
+
 export const commentSlice = createSlice({
   name: "comments",
-  initialState,
+  initialState: {},
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(updateComment.fulfilled, (state, action) => {
-      const updated = action.payload;
-      state.comments = state.comments.map((comment) =>
-        comment._id === updated._id ? updated : comment
-      );
-    });
+    builder
+      .addCase(updateComment.fulfilled, (state, action) => {
+        const updated = action.payload;
+        state.comments = state.comments.map((comment) =>
+          comment._id === updated._id ? updated : comment
+        );
+      })
+      .addCase(createComment.fulfilled, (state, action) => {
+        state.comments.push(action.payload.comment);
+      });
   },
 });
 
