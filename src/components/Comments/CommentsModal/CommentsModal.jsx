@@ -90,7 +90,7 @@ const CommentsModal = ({ open, onClose, post, onCommentUpdated }) => {
           dataSource={post?.comments || []}
           renderItem={renderComment}
         />
-        <Button>Crear comentario</Button>
+        {/* <Button>Crear comentario</Button> */}
       </AntModal>
     </>
   );
