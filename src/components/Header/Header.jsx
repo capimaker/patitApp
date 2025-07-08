@@ -27,12 +27,9 @@ const Header = () => {
         <div className="nav-content">
         <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
         <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
-        <Link to="/create" className="nav-icon"><FaPlus /></Link>
+        <Link to="/posts/newpost" className="nav-icon"><FaPlus /></Link>
         <Link to="/profile" className="nav-icon"><FaPaw /></Link>
         <span onClick={onLogout} className="nav-icon"><IoLogOutOutline /></span>
-        {/* {token && (                                               
-          <Link to="/profile" className="nav-icon"><FaPaw /></Link>
-         )}    */}
           </div>                                                        
         </nav>
 
@@ -41,10 +38,7 @@ const Header = () => {
         <div className="nav-content">
         <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
         <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
-        <Link to="/create" className="nav-icon"><FaPlus /></Link>
-         {/* {token && (                                                    
-          <Link to="/profile" className="nav-icon"><FaPaw /></Link>
-         )}                                                                 */}
+        <Link to="/posts/newpost" className="nav-icon"><FaPlus /></Link>                                                               
          <Link to="/profile" className="nav-icon"><FaPaw /></Link>
         <span onClick={onLogout}className="nav-icon"><IoLogOutOutline /></span>
          </div>
@@ -54,4 +48,3 @@ const Header = () => {
 }
 
 export default Header    
- // comentar desde {token && en lineas 45 y 56..... hasta )} para trabajar en home 
