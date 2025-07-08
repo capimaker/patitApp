@@ -38,6 +38,7 @@ const Header = () => {
 
       {/* NAVBAR DESKTOP */}
       <nav className="header desktop-navbar">
+        <div className="nav-content">
         <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
         <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
         <Link to="/create" className="nav-icon"><FaPlus /></Link>
@@ -46,11 +47,12 @@ const Header = () => {
         {/* {token && (                                               
           <Link to="/profile" className="nav-icon"><FaPaw /></Link>
          )}    */}
-                                                                   
+          </div>                                                        
         </nav>
 
       {/* NAVBAR MOBILE */}
       <nav className="header mobile-navbar">
+        <div className="nav-content">
         <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
         <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
         <Link to="/create" className="nav-icon"><FaPlus /></Link>
@@ -59,6 +61,7 @@ const Header = () => {
          )}                                                                 */}
          <Link to="/profile" className="nav-icon"><FaPaw /></Link>
         <span onClick={onLogout}className="nav-icon"><IoLogOutOutline /></span>
+         </div>
       </nav>
     </>
   )
