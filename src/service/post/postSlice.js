@@ -18,6 +18,22 @@ export const likePost = createAsyncThunk("posts/likePost", async (postId, { getS
   return await postService.likePost(postId, token);
 });
 
+export const getPostByTitle = createAsyncThunk("post/getPostByTitle", async (postName) => {
+  try {
+    return await postService.getPostByTitle(postName);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+export const createPost = createAsyncThunk("posts/createPost", async (formData) => {
+  try {
+    return await postService.createPost(formData);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 export const postSlice = createSlice({
   name: "posts",
   initialState,
@@ -33,6 +49,12 @@ export const postSlice = createSlice({
         if (index !== -1) {
           state.posts[index] = updatedPost;
         }
+      })
+      .addCase(getPostByTitle.fulfilled, (state, action) => {
+        state.posts = Array.isArray(action.payload) ? action.payload : [action.payload];
+      })
+      .addCase(createPost.fulfilled, (state, action) => {
+        state.posts.push(action.payload);
       });
   },
 });
