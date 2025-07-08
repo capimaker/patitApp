@@ -1,6 +1,11 @@
-import axios from "axios";
+ import axios from "axios";
 
 const API_URL = "http://localhost:8080/user";
+
+const register = async (userData) => {
+    const res = await axios.post(API_URL, userData);
+      return res.data;
+};
 
 const login = async (userData) => {
   const res = await axios.post(`${API_URL}/login`, userData);
@@ -12,8 +17,22 @@ const login = async (userData) => {
   return res.data;
 };
 
+const logout = async () => {
+  const token = JSON.parse(localStorage.getItem("token"));
+  const res = await axios.delete(`${API_URL}/logout`,{
+    headers:{
+      authorization: `Bearer ${token}`,
+    },
+  });
+  if (res.data){
+    localStorage.clear();
+  }
+  return res.data;
+}
 const authService = {
-  login,
+    login,
+    logout,
+    register,
 };
 
 export default authService;

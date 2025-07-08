@@ -34,6 +34,7 @@ const SearchInput = () => {
   return (
     <div className="search-container">
       <Input
+        size="large"
         prefix={<SearchOutlined />}
         onKeyUp={handleSearch}
         placeholder="Escríbe tu búsqueda y presiona 'Enter' "

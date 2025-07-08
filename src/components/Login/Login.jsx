@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import "./Login.css";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Inputpass } from "./Inputpass";
 import { Inputemail } from "./Inputemail";
-import { login } from "../../service/authSlice.js";
+import { login } from "../../service/authSlice";
+import { Mybutton } from "../Elements/Button/Button";
+import logo from "../../assets/logo_patitas.png";
 
 const Login = () => {
+  const [activeTab, setActiveTab] = useState("login");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,25 +30,43 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <Inputemail
-        className="login_css"
-        type="email"
-        name="email"
-        value={email}
-        placeholder="Name"
-        onChange={onChange}
-      />
-      <Inputpass
-        className="pass"
-        type="password"
-        name="password"
-        value={password}
-        placeholder="Password"
-        onChange={onChange}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className="login-container">
+      <div className="logo">
+        <img src={logo} alt="Logo" />
+      </div>
+
+      <div className="tabs">
+        <NavLink to="/login" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
+          <h3>Iniciar sesión</h3>
+        </NavLink>
+        <NavLink to="/register" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
+          <h3>Registrarse</h3>
+        </NavLink>
+      </div>
+
+      <form className="login-form" onSubmit={onSubmit}>
+        <Inputemail
+          className="login-input"
+          type="email"
+          name="email"
+          value={email}
+          placeholder="Email"
+          onChange={onChange}
+        />
+        <Inputpass
+          className="login-input"
+          type="password"
+          name="password"
+          value={password}
+          placeholder="Password"
+          onChange={onChange}
+        />
+        <Mybutton className="login-button" htmlType="submit">
+          Iniciar Sesión
+        </Mybutton>
+        {/* <p className="forgot">¿Olvidaste la contraseña?</p> */}
+      </form>
+    </div>
   );
 };
 
