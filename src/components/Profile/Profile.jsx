@@ -9,6 +9,7 @@ import CommentsModal from "../Elements/CommentsModal/CommentsModal";
 import "./Profile.css";
 const { Meta } = Card;
 
+
 const Profile = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -105,6 +106,7 @@ const Profile = () => {
         />
       )}
     </div>
+    
   );
 };
 
