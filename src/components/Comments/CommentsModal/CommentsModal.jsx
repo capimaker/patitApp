@@ -19,7 +19,7 @@ const CommentsModal = ({ open, onClose, post, onCommentUpdated }) => {
         updateComment({ commentId: editingCommentId, updatedComment: { text: editedText }, token })
       );
       if (updateComment.fulfilled.match(resultAction)) {
-        onCommentUpdated(resultAction.payload);
+        onCommentUpdated(resultAction.payload.comment);
         setEditingCommentId(null);
         setEditedText("");
       }
