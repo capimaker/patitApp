@@ -6,7 +6,7 @@ import { getAllPost, likePost } from "../../../service/post/postSlice";
 const { Meta } = Card;
 import "./Post.css";
 import Carrusel from "../../Elements/Carrusel/Carrusel";
-import CommentsModal from "../../Elements/CommentsModal/CommentsModal";
+import CommentsModal from "../../Comments/CommentsModal/CommentsModal";
 
 const Post = () => {
   const dispatch = useDispatch();
@@ -20,10 +20,10 @@ const Post = () => {
     dispatch(getAllPost());
   }, [dispatch]);
 
-  const handleOpenComments = (post) => {
+  /*   const handleOpenComments = (post) => {
     setSelectedPost(post);
     setIsModalOpen(true);
-  };
+  }; */
 
   return (
     <div className="post-card">
@@ -70,6 +70,14 @@ const Post = () => {
           open={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           post={selectedPost}
+          onCommentUpdated={(updatedComment) => {
+            setSelectedPost((prevPost) => ({
+              ...prevPost,
+              comments: prevPost.comments.map((comment) =>
+                comment._id === updatedComment._id ? updatedComment : comment
+              ),
+            }));
+          }}
         />
       )}
     </div>
