@@ -8,3 +8,14 @@ h3 {
   color: var(--acentos);
   text-align: center;
 }
+
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}

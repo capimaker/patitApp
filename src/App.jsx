@@ -11,22 +11,22 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <>
+    <div className="app-wrapper"> {/* ← 1️⃣ línea añadida */}
       <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/posts" element={<Posts />} />
           <Route path="/login" element={<Login/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/register" element={<Register/>}/>
-         <Route path="/home" element={<Home />} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/home" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/search/:postTitle" element={<Search />} />
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </div> 
   );
 }
 

@@ -25,14 +25,6 @@ const Home = () => {
           <FaPaw className="paw-icon" />
           <h2>Bienvenido/a a Patitas Conectadas</h2>
         </div>
-
-        {/* <div className="post-box">
-          <textarea
-            placeholder="¿Qué hay en tu mente?"
-            className="post-input"
-            rows={3}
-          />
-        </div> */}
         <div>
         <Post />
         </div>

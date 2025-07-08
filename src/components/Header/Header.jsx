@@ -12,7 +12,6 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {user} = useSelector ((state) => state.auth);
-  // const token = localStorage.getItem("token");     //comentar para poder trabajar en Home
 
     const onLogout = (e) =>{
         e.preventDefault();
@@ -22,19 +21,6 @@ const Header = () => {
 
   return (
     <>
-      <div className = "header-top">
-         {user ? (
-            <>
-            {/* //      <Mybutton onClick={onLogout}>Cerrar Sesión</Mybutton> */}
-            {/* //      <span><Link to="/profile">{user.name}</Link></span> */}
-                  </>
-               ):(
-                <>
-                <span><Link to="/login"> Iniciar Sesión</Link></span>
-                <span><Link to="/register">Registrate</Link></span>
-                </>
-                )}
-        </div>
 
       {/* NAVBAR DESKTOP */}
       <nav className="header desktop-navbar">
