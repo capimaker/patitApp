@@ -24,10 +24,26 @@ const getPostByTitle = async (postTitle) => {
   return res.data;
 };
 
+const createPost = async (formData) => {
+  let token = localStorage.getItem("token");
+  if (token?.startsWith('"') && token?.endsWith('"')) {
+    token = token.slice(1, -1);
+  }
+  if (!token) throw new Error("No token found");
+  const res = await axios.post(API_URL, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return res.data;
+};
+
 const postService = {
   getAllPost,
   likePost,
   getPostByTitle,
+  createPost,
 };
 
 export default postService;

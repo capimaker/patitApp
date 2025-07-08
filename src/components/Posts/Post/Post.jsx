@@ -11,6 +11,7 @@ import CommentsModal from "../../Elements/CommentsModal/CommentsModal";
 const Post = () => {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.posts);
+  const backendUrl = "http://localhost:8080/uploads";
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
@@ -30,7 +31,13 @@ const Post = () => {
         <Card
           className="individual-card"
           key={post._id}
-          cover={<Carrusel images={post.image} />}
+          cover={
+            <Carrusel
+              images={(Array.isArray(post.image) ? post.image : post.image ? [post.image] : []).map(
+                (img) => (img.startsWith("http") ? img : `${backendUrl}/${img}`)
+              )}
+            />
+          }
           actions={[
             <Badge count={post.likes.length} offset={[6, 0]} size="small" color="orange">
               <HeartTwoTone
@@ -52,7 +59,7 @@ const Post = () => {
           ]}
         >
           <Meta
-            avatar={<Avatar src={post.user.image} />}
+            avatar={<Avatar src={post.user?.image || ""} />}
             title={<span className="meta-title">{post.title}</span>}
             description={<span className="meta-description">{post.body}</span>}
           />

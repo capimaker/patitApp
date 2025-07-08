@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Search from "./components/Search/Search";
 import Register from "./components/Register/Register";
 import Footer from "./components/Footer/Footer";
+import NewPost from "./components/Posts/NewPost/NewPost";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/search/:postTitle" element={<Search />} />
+          <Route path="/posts/newpost" element={<NewPost />} />
         </Routes>
         <Footer />
       </BrowserRouter>
