@@ -92,20 +92,20 @@ const Profile = () => {
           <p>{profileUser.email}</p>
 
           {auth && profileUser._id !== auth._id && (
-            <button
+            <Mybutton
               className={`follow-button ${isFollowing ? "following" : ""}`}
               onClick={handleFollow}
               disabled={followLoading}
             >
               {isFollowing ? "Siguiendo" : "Seguir"}
-            </button>
+            </Mybutton>
           )}
 
           {/* Estadísticas */}
           <div className="follow-stats">
-            <Mybutton type="link" onClick={() => setFollowersModalOpen(true)}>
+            <Button type="link" onClick={() => setFollowersModalOpen(true)}>
               {profileUser.followers?.length ?? 0} seguidores
-            </Mybutton>
+            </Button>
             <Button type="link" onClick={() => setFollowingModalOpen(true)}>
               {profileUser.following?.length ?? 0} siguiendo
             </Button>

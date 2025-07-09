@@ -75,3 +75,11 @@
   font-family: var(--texto);
   color: var(--acentos) !important;
 }
+
+.follow-button{
+  background-color: var(--acentos);
+  font-family: var(--texto);
+  margin-top: 1rem;
+
+}
+
