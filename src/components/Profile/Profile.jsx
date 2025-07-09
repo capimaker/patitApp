@@ -8,6 +8,7 @@ import { HeartTwoTone, MessageTwoTone } from "@ant-design/icons";
 import Carrusel from "../Elements/Carrusel/Carrusel";
 import CommentsModal from "../Comments/CommentsModal/CommentsModal";
 import "./Profile.css";
+import { Mybutton } from "../Elements/Button/Button";
 
 const { Meta } = Card;
 
@@ -26,6 +27,7 @@ const Profile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [isFollowersModalOpen, setFollowersModalOpen] = useState(false);
+  const [isFollowingModalOpen, setFollowingModalOpen] = useState(false);
 
   useEffect(() => {
     dispatch(getAllPost());
@@ -101,14 +103,12 @@ const Profile = () => {
 
           {/* Estadísticas */}
           <div className="follow-stats">
-            <Button
-              className="follower-btn"
-              type="link"
-              onClick={() => setFollowersModalOpen(true)}
-            >
+            <Mybutton type="link" onClick={() => setFollowersModalOpen(true)}>
               {profileUser.followers?.length ?? 0} seguidores
+            </Mybutton>
+            <Button type="link" onClick={() => setFollowingModalOpen(true)}>
+              {profileUser.following?.length ?? 0} siguiendo
             </Button>
-            <span>{profileUser.following?.length ?? 0} siguiendo</span>
           </div>
         </div>
       </div>
@@ -126,6 +126,30 @@ const Profile = () => {
           <List
             itemLayout="horizontal"
             dataSource={profileUser.followers}
+            renderItem={(f) => (
+              <List.Item>
+                <List.Item.Meta
+                  avatar={<Avatar src={f.image || "/default-avatar.png"} />}
+                  title={<Link to={`/profile/id/${f._id}`}>{f.name}</Link>}
+                />
+              </List.Item>
+            )}
+          />
+        )}
+      </Modal>
+
+      <Modal
+        title={`Siguiendo a ${profileUser.name}`}
+        open={isFollowingModalOpen}
+        onCancel={() => setFollowingModalOpen(false)}
+        footer={null}
+      >
+        {profileUser.following?.length === 0 ? (
+          <p>No sigues a nadie aún.</p>
+        ) : (
+          <List
+            itemLayout="horizontal"
+            dataSource={profileUser.following}
             renderItem={(f) => (
               <List.Item>
                 <List.Item.Meta
