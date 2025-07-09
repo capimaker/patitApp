@@ -67,7 +67,7 @@
 }
  */
 .login-button.ant-btn {
-  width: 400px;
+  width: 100%;
   background: var(--acentos);
   border-color: white;
   border: none;
