@@ -1,7 +1,6 @@
 .profile-container {
   max-width: 1000px;
   margin: 0.6rem;
-  margin-top: 8rem;
 }
 
 .profile-header {
@@ -43,7 +42,6 @@
   font-family: var(--texto);
 }
 
-
 .profile-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -59,12 +57,10 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 @media (max-width: 600px) {
   .profile-grid {
     grid-template-columns: 1fr;
     padding-left: 2.5rem;
-
   }
 }
 
@@ -75,3 +71,7 @@
   color: #974701;
 }
 
+.follower-btn {
+  font-family: var(--texto);
+  color: var(--acentos) !important;
+}

@@ -101,7 +101,11 @@ const Profile = () => {
 
           {/* Estadísticas */}
           <div className="follow-stats">
-            <Button type="link" onClick={() => setFollowersModalOpen(true)}>
+            <Button
+              className="follower-btn"
+              type="link"
+              onClick={() => setFollowersModalOpen(true)}
+            >
               {profileUser.followers?.length ?? 0} seguidores
             </Button>
             <span>{profileUser.following?.length ?? 0} siguiendo</span>
