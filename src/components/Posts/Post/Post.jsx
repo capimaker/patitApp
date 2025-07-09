@@ -3,6 +3,7 @@ import { Avatar, Badge, Card } from "antd";
 import { HeartTwoTone, MessageTwoTone } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { getAllPost, likePost } from "../../../service/post/postSlice";
+import { Link } from "react-router-dom";   
 const { Meta } = Card;
 import "./Post.css";
 import Carrusel from "../../Elements/Carrusel/Carrusel";
@@ -58,9 +59,26 @@ const Post = () => {
             </Badge>,
           ]}
         >
-          <Meta
+        { /* <Meta
             avatar={<Avatar src={post.user?.image || ""} />}
             title={<span className="meta-title">{post.title}</span>}
+            description={<span className="meta-description">{post.body}</span>}
+          />
+        </Card>
+      ))}*/}
+      <Meta
+            // Es lo mismo solo que poniendo el avatar dentro de Link lo mandamos a /profile/id/:id 
+            avatar={
+              <Link to={`/profile/id/${post.user?._id}`}>
+                <Avatar src={post.user?.image || ""} />
+              </Link>
+            }
+            // y aquí basicamente he hehco lo mismo pero para el titulo que es el nombre también dentro de Link
+            title={
+              <Link to={`/profile/id/${post.user?._id}`} className="meta-title">
+                {post.title}
+              </Link>
+            }
             description={<span className="meta-description">{post.body}</span>}
           />
         </Card>

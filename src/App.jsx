@@ -9,13 +9,24 @@ import Search from "./components/Search/Search";
 import Register from "./components/Register/Register";
 import Footer from "./components/Footer/Footer";
 import NewPost from "./components/Posts/NewPost/NewPost";
+import PrivateZone from "./Guards/PrivateZone";
+import AdminZone from "./Guards/AdminZone";
+import Admin from "./components/Admin/Admin";
+import NotFound from "./components/NotFound/NotFound";
+
 
 function App() {
   return (
-    <div className="app-wrapper"> {/* ← 1️⃣ línea añadida */}
+    <div className="app-wrapper"> 
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route path="/admin" element={
+            <AdminZone>
+            <Admin />
+            </AdminZone>
+            } 
+            />
           <Route path="/posts" element={<Posts />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/profile" element={<Profile/>} />
@@ -24,7 +35,16 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/search/:postTitle" element={<Search />} />
+          <Route path="/profile/id/:id" element={<Profile />} />
+          <Route path="/profile/name/:name" element={<Profile />} />
+
+          <Route path="/profile" element={
+            <PrivateZone>
+            <Profile />
+            </PrivateZone>
+            } />
           <Route path="/posts/newpost" element={<NewPost />} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

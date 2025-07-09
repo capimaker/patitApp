@@ -17,6 +17,7 @@ const Header = () => {
         e.preventDefault();
         dispatch(logout());
         navigate("/");
+<<<<<<< HEAD
   };
 
   return (
@@ -31,6 +32,24 @@ const Header = () => {
         <Link to="/profile" className="nav-icon"><FaPaw /></Link>
         <span onClick={onLogout} className="nav-icon"><IoLogOutOutline /></span>
           </div>                                                        
+=======
+    };
+    return(
+        <nav>
+            {user ? (
+            <>
+                {user.role === 'admin' ? <span><Link to ="/admin">Admin</Link></span>:''}
+                 <Mybutton onClick={onLogout}> Cerrar Sesión</Mybutton>
+                 <span><Link to="/profile">{user.name}</Link></span>
+                 </>
+               ):(
+                <>
+                <span><Link to="/login"> Iniciar Sesión</Link></span>
+                <span><Link to="/register">Registrate</Link></span>
+                </>
+                )}
+                
+>>>>>>> develop
         </nav>
 
       {/* NAVBAR MOBILE */}
