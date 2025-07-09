@@ -14,41 +14,45 @@ import AdminZone from "./Guards/AdminZone";
 import Admin from "./components/Admin/Admin";
 import NotFound from "./components/NotFound/NotFound";
 
-
 function App() {
   return (
-    <div className="app-wrapper"> 
+    <div className="app-wrapper">
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/admin" element={
-            <AdminZone>
-            <Admin />
-            </AdminZone>
-            } 
-            />
+          <Route
+            path="/admin"
+            element={
+              <AdminZone>
+                <Admin />
+              </AdminZone>
+            }
+          />
           <Route path="/posts" element={<Posts />} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/register" element={<Register/>}/>
+          <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/search/:postTitle" element={<Search />} />
           <Route path="/profile/id/:id" element={<Profile />} />
           <Route path="/profile/name/:name" element={<Profile />} />
 
-          <Route path="/profile" element={
-            <PrivateZone>
-            <Profile />
-            </PrivateZone>
-            } />
+          <Route
+            path="/profile"
+            element={
+              <PrivateZone>
+                <Profile />
+              </PrivateZone>
+            }
+          />
           <Route path="/posts/newpost" element={<NewPost />} />
-          <Route path="*" element={<NotFound/>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>
-    </div> 
+    </div>
   );
 }
 

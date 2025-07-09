@@ -1,6 +1,6 @@
 .home-container {
-  padding: 2.4rem;
-  padding-top: 50px; 
+  /*   padding: 2.4rem; */
+  /*   padding-top: 50px; */
   box-sizing: border-box;
   /* max-width: 600px; */
   margin: 0 auto;
@@ -8,20 +8,20 @@
 
 .welcome-header {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.1rem;
+  /* margin-bottom: 1.1rem; */
   color: #d06000;
   font-family: var(--titulos);
   font-size: 1.3rem;
-
+  padding: 1rem 0;
 }
 
 .paw-icon {
-  font-size: 6rem;
+  font-size: 4rem;
   color: #d06000;
 }
-
 
 /* HOVER NAVBAR MOBILE */
 @media (max-width: 767px) {
@@ -34,7 +34,7 @@
 
   .mobile-navbar .nav-icon:hover {
     transform: scale(1.5);
-    background-color: rgba(255, 255, 255, 0.15); 
+    background-color: rgba(255, 255, 255, 0.15);
     color: #ffeac8;
   }
 }

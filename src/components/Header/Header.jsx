@@ -11,40 +11,59 @@ import "./Header.css";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {user} = useSelector ((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
 
-    const onLogout = (e) =>{
-        e.preventDefault();
-        dispatch(logout());
-        navigate("/");
+  const onLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout());
+    navigate("/");
   };
 
   return (
     <>
-
       {/* NAVBAR DESKTOP */}
       <nav className="header desktop-navbar">
         <div className="nav-content">
-        <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
-        <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
-        <Link to="/posts/newpost" className="nav-icon"><FaPlus /></Link>
-        <Link to="/profile" className="nav-icon"><FaPaw /></Link>
-        <span onClick={onLogout} className="nav-icon"><IoLogOutOutline /></span>
-          </div>                                                        
-        </nav>
+          <Link to="/home" className="nav-icon">
+            <AiOutlineHome />
+          </Link>
+          <Link to="/search" className="nav-icon">
+            <IoSearchOutline />
+          </Link>
+          <Link to="/posts/newpost" className="nav-icon">
+            <FaPlus />
+          </Link>
+          <Link to="/profile" className="nav-icon">
+            <FaPaw />
+          </Link>
+          <span onClick={onLogout} className="nav-icon">
+            <IoLogOutOutline />
+          </span>
+        </div>
+      </nav>
 
       {/* NAVBAR MOBILE */}
       <nav className="header mobile-navbar">
         <div className="nav-content">
-        <Link to="/home" className="nav-icon"><AiOutlineHome /></Link>
-        <Link to="/search" className="nav-icon"><IoSearchOutline /></Link>
-        <Link to="/posts/newpost" className="nav-icon"><FaPlus /></Link>                                                               
-         <Link to="/profile" className="nav-icon"><FaPaw /></Link>
-        <span onClick={onLogout}className="nav-icon"><IoLogOutOutline /></span>
-         </div>
+          <Link to="/home" className="nav-icon">
+            <AiOutlineHome />
+          </Link>
+          <Link to="/search" className="nav-icon">
+            <IoSearchOutline />
+          </Link>
+          <Link to="/posts/newpost" className="nav-icon">
+            <FaPlus />
+          </Link>
+          <Link to="/profile" className="nav-icon">
+            <FaPaw />
+          </Link>
+          <span onClick={onLogout} className="nav-icon">
+            <IoLogOutOutline />
+          </span>
+        </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Header    
+export default Header;
