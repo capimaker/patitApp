@@ -4,8 +4,8 @@ import { getAllPost, likePost } from "../../service//post/postSlice";
 import { Card, Avatar, Badge } from "antd";
 import { HeartTwoTone, MessageTwoTone } from "@ant-design/icons";
 import Carrusel from "../Elements/Carrusel/Carrusel";
-import CommentsModal from "../Elements/CommentsModal/CommentsModal";
 import "./Profile.css";
+import CommentsModal from "../Comments/CommentsModal/CommentsModal";
 const { Meta } = Card;
 
 const Profile = () => {
@@ -20,9 +20,7 @@ const Profile = () => {
     dispatch(getAllPost());
   }, [dispatch]);
 
-  if (!user) return null; // ✅ Protección mínima contra user null
-
-  const myPosts = posts.filter((p) => p.user?._id === user._id); // ✅ user._id solo si user existe
+  const myPosts = posts.filter((p) => p.user?._id === user?._id);
 
   const handleLike = (postId) => {
     dispatch(likePost(postId));
@@ -36,11 +34,7 @@ const Profile = () => {
   return (
     <div className="profile-container">
       <div className="profile-header">
-        <img
-          src={user.image || ""}
-          alt={user.name}
-          className="profile-avatar"
-        />
+        <img src={user.image || ""} alt={user.name} className="profile-avatar" />
         <div className="profile-info">
           <h2>{user.name}</h2>
           <p>{user.email}</p>
@@ -59,24 +53,14 @@ const Profile = () => {
               className="individual-card"
               cover={<Carrusel images={post.image} />}
               actions={[
-                <Badge
-                  count={post.likes.length}
-                  offset={[6, 0]}
-                  size="small"
-                  color="orange"
-                >
+                <Badge count={post.likes.length} offset={[6, 0]} size="small" color="orange">
                   <HeartTwoTone
                     key="like"
                     twoToneColor="#d06000"
                     onClick={() => handleLike(post._id)}
                   />
                 </Badge>,
-                <Badge
-                  count={post.comments.length}
-                  offset={[6, 0]}
-                  size="small"
-                  color="orange"
-                >
+                <Badge count={post.comments.length} offset={[6, 0]} size="small" color="orange">
                   <MessageTwoTone
                     key="comment"
                     twoToneColor="#d06000"

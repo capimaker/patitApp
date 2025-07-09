@@ -44,6 +44,7 @@ const NewPost = () => {
   return (
     <>
       <h1>Crea tu nuevo post!</h1>
+      <div style={{ padding: "0 24px" }}></div>
       <form onSubmit={handleSubmit} className="new-post-form">
         <Input
           name="title"
@@ -51,7 +52,7 @@ const NewPost = () => {
           value={data.title}
           onChange={handleChange}
           size="large"
-          style={{ color: "#d06000" }}
+          style={{ color: "#d06000", marginBottom: "16px" }}
         ></Input>
         <Input.TextArea
           name="body"
@@ -59,7 +60,7 @@ const NewPost = () => {
           value={data.body}
           onChange={handleChange}
           size="large"
-          style={{ color: "#d06000" }}
+          style={{ color: "#d06000", marginBottom: "16px" }}
         ></Input.TextArea>
         <Upload
           beforeUpload={() => false}
@@ -68,14 +69,25 @@ const NewPost = () => {
           onChange={handleImageChange}
         >
           <Mybutton
-            style={{ backgroundColor: "#d06000", borderRadius: "999px" }}
+            style={{
+              backgroundColor: "#d06000",
+              borderRadius: "999px",
+              marginBottom: "16px",
+            }}
             icon={<UploadOutlined />}
           >
             Seleccionar imagen
           </Mybutton>
         </Upload>
 
-        <Mybutton htmlType="submit" style={{ backgroundColor: "#d06000", borderRadius: "999px" }}>
+        <Mybutton
+          htmlType="submit"
+          style={{
+            backgroundColor: "#d06000",
+            borderRadius: "999px",
+            marginBottom: "16px",
+          }}
+        >
           Publicar post
         </Mybutton>
       </form>
