@@ -29,6 +29,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/search" element={<Search />} />
           <Route path="/search/:postTitle" element={<Search />} />
+          <Route path="/profile/id/:id" element={<Profile />} />
+          <Route path="/profile/name/:name" element={<Profile />} />
 
           <Route path="/profile" element={
             <PrivateZone>

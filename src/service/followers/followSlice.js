@@ -1,26 +1,27 @@
-// src/service/followSlice.js
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import followService from "./followService";
 
-// 1️⃣ Refrescar info del usuario logueado (followers/following)
+
 export const fetchLoggedUser = createAsyncThunk(
   "follow/fetchLoggedUser",
   async (_, thunkAPI) => {
     try {
-      return await followService.getLoggedUser();
+      const res = await followService.getLoggedUser();
+      return res.user;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response?.data || err.message);
     }
   }
 );
 
-// 2️⃣ Hacer toggle follow/unfollow
+
 export const toggleFollow = createAsyncThunk(
   "follow/toggleFollow",
   async (targetUserId, thunkAPI) => {
     try {
       const data = await followService.toggleFollow(targetUserId);
-      // después de cambiar, recarga la info del usuario logueado:
+      
       thunkAPI.dispatch(fetchLoggedUser());
       return data;
     } catch (err) {
@@ -32,7 +33,7 @@ export const toggleFollow = createAsyncThunk(
 const followSlice = createSlice({
   name: "follow",
   initialState: {
-    user: null,        // datos del usuario logueado
+    user: null,        
     isLoading: false,
     isError: false,
     message: "",

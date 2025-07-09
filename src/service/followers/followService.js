@@ -1,29 +1,29 @@
 import axios from "axios";
+import followService from "./followService";
 
 const API_URL = "http://localhost:8080/user";
 
-const followToggle = async(targetUserId) =>{
+const toggleFollow = async(targetUserId) =>{
     const token = JSON.parse(localStorage.getItem("token"));
      const res = await axios.post(
-    `${API_URL}/${targetUserId}/follow`,
+    `${API_URL}/follow/${targetUserId}`,
     {},
     { headers: { Authorization: `Bearer ${token}` } }
   );
   return res.data;
 };
-const getFollowers = async (userId) => {
+{/*const getLoggedUser = async () => {
+  const token = JSON.parse(localStorage.getItem("token"));
+  const res = await axios.get(`${API_URL}/profile`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
   
-  const res = await axios.get(`${API_URL}/${userId}/followers`);
-  return res.data; 
-};
-const getFollowing = async (userId) => {
-  
-  const res = await axios.get(`${API_URL}/${userId}/following`);
-  return res.data; 
-};
+  return res.data.user;
+};*/}
+
 
 export default {
-  followToggle,
-  getFollowers,
-  getFollowing,
+  toggleFollow,
+ // getLoggedUser,
+  
 };
