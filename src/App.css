@@ -9,7 +9,6 @@ h3 {
   text-align: center;
 }
 
-
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -17,5 +16,5 @@ h3 {
 }
 
 footer {
-  margin-top: auto;
+  margin-top: 10px;
 }

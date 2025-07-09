@@ -5,8 +5,6 @@ import { FaPaw } from "react-icons/fa";
 import "./Home.css";
 import Post from "../Posts/Post/Post";
 
-
-
 const Home = () => {
   const navigate = useNavigate();
 
@@ -19,14 +17,13 @@ const Home = () => {
 
   return (
     <>
-      <Header />
       <div className="home-container">
         <div className="welcome-header">
           <FaPaw className="paw-icon" />
           <h2>Bienvenido/a a Patitas Conectadas</h2>
         </div>
         <div>
-        <Post />
+          <Post />
         </div>
       </div>
       {/* <Footer /> */}
