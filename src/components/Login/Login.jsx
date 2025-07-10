@@ -46,7 +46,7 @@ const Login = () => {
         <img src={logo} alt="Logo" />
       </div>
       <div>
-        <h3>La red social aprobada por perros...toleada por gatos</h3>
+        <h3>La red social aprobada por perros...tolerada por gatos</h3>
       </div>
 
       <div className="tabs">
