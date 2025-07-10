@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./Login.css";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { Inputpass } from "./Inputpass"; 
-import { Inputemail } from './Inputemail';
-import { login } from '../../service/authSlice';
-import { Mybutton } from '../Elements/Button/Button';
-import { useEffect } from "react";              
-import { useNavigate } from "react-router-dom"; 
-import { useSelector } from "react-redux"; 
+import { Inputpass } from "./Inputpass";
+import { Inputemail } from "./Inputemail";
+import { login } from "../../service/authSlice";
+import { Mybutton } from "../Elements/Button/Button";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import logo from "../../assets/logo_patitas.png";
 
 const Login = () => {
@@ -21,13 +21,13 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-const {user} = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
 
-useEffect(() => {
-  if (user) {
-    navigate ("/home");
-  }
-}, [user, navigate])
+  useEffect(() => {
+    if (user) {
+      navigate("/home");
+    }
+  }, [user, navigate]);
 
   const onChange = (e) => {
     setFormData({
@@ -44,6 +44,9 @@ useEffect(() => {
     <div className="login-container">
       <div className="logo">
         <img src={logo} alt="Logo" />
+      </div>
+      <div>
+        <h3>La red social aprobada por perros...toleada por gatos</h3>
       </div>
 
       <div className="tabs">
@@ -75,14 +78,10 @@ useEffect(() => {
         <Mybutton className="login-button" htmlType="submit">
           Iniciar Sesión
         </Mybutton>
-         <p className="forgot">
-        </p>
-        </form>
-       </div>
-     
+        <p className="forgot"></p>
+      </form>
+    </div>
   );
 };
 
-
-
-export default Login
+export default Login;
